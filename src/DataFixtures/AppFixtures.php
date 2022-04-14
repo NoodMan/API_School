@@ -28,12 +28,12 @@ class AppFixtures extends Fixture
         $director->setPassword($hashedPassword);
         $manager->persist($director);
 
-        $teacher_b = (new User())->setUsername("teacher_baba")->setLastname("Mamie")->setFirstname("Baba")->setSeniority("14 year")->setSalary(100000)->setRoles(["ROLE_ADMIN"]);
+        $teacher_b = (new User())->setUsername("teacher_baba")->setLastname("Mamie")->setFirstname("Baba")->setSeniority("14 year")->setSalary(100000)->setRoles(["ROLE_TEACHER"]);
         $hashedPassword = $this->encoder->hashPassword($teacher_b, "baba");
         $teacher_b->setPassword($hashedPassword);
         $manager->persist($teacher_b);
 
-        $teacher_f = (new User())->setUsername("teacher_flagada")->setLastname("Flagada")->setFirstname("Jones")->setSeniority("9 year")->setSalary(50000)->setRoles(["ROLE_ADMIN"]);
+        $teacher_f = (new User())->setUsername("teacher_flagada")->setLastname("Flagada")->setFirstname("Jones")->setSeniority("9 year")->setSalary(50000)->setRoles(["ROLE_TEACHER"]);
         $hashedPassword = $this->encoder->hashPassword($teacher_f, "flagada");
         $teacher_f->setPassword($hashedPassword);
         $manager->persist($teacher_f);
